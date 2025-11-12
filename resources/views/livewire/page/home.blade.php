@@ -1,4 +1,4 @@
-<main class="flex-1  bg-gradient-to-r from-cyan-50 via-white to-cyan-50  container mx-auto px-4 py-10 sm:py-16 space-y-12 sm:space-y-24">
+<main class="flex-1  bg-gradient-to-r from-cyan-50 via-white to-cyan-50  container mx-auto px-4 sm:py-16 space-y-12 sm:space-y-24">
 
     <!-- Hero Section -->
     <!-- Hero Section -->
@@ -9,7 +9,7 @@
         <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-100 rounded-full blur-3xl opacity-40 -z-10 animate-pulse"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-50 rounded-full blur-3xl opacity-40 -z-10 animate-pulse delay-300"></div>
 
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-8 py-24 relative z-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-8 py-12 relative z-10">
 
             <!-- Left Content -->
             <div
