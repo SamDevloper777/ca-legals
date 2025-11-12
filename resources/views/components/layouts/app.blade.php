@@ -44,11 +44,10 @@
     @endphp
 
     @if ($jsFile)
-    <script type="module" src="{{ asset('build/' . $jsFile) }}"></script>
     @endif
     @endif
-<!-- Font Awesome CDN -->
     @livewireScripts
+
 </body>
 
 </html>

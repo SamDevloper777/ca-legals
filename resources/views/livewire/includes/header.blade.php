@@ -10,7 +10,7 @@
         <div class="flex items-center justify-between h-16 md:h-20">
 
             <!-- Logo Section -->
-            <a href="/" class="flex items-center gap-3 group">
+            <a href="/" wire:navigate class="flex items-center gap-3 group">
                <img src="{{asset('images/logo.png')}}" class="w-12 h-auto object-cover" alt="ABC & Co. Logo">
                 <div>
                     <div class="font-semibold text-gray-900 group-hover:text-cyan-700 transition">ABC & Co.</div>
@@ -39,7 +39,7 @@
                         @endphp
 
                         @if($enabled)
-                            <a href="{{ $href }}" class="{{ $isActive ? 'text-cyan-700 font-semibold' : 'text-gray-700 hover:text-cyan-700' }} transition">{{ $item['label'] }}</a>
+                            <a href="{{ $href }}" wire:navigate class="{{ $isActive ? 'text-cyan-700 font-semibold' : 'text-gray-700 hover:text-cyan-700' }} transition">{{ $item['label'] }}</a>
                         @endif
                     @endforeach
                 </nav>
@@ -50,7 +50,7 @@
                 @endphp
 
                 @if($consultEnabled)
-                    <a href="{{ \Illuminate\Support\Facades\Route::has('contact') ? route('contact') : url('/contact') }}" 
+                    <a href="{{ \Illuminate\Support\Facades\Route::has('contact') ? route('contact') : url('/contact') }}" wire:navigate
                        class="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-700 text-white rounded-lg text-sm font-medium shadow-sm hover:bg-cyan-700 transition duration-300 transform hover:-translate-y-0.5">
                         <i class="fa-solid fa-phone"></i> Consultation
                     </a>
@@ -105,11 +105,11 @@
                 @endphp
 
                 @if($enabled)
-                    <a href="{{ $href }}" class="block px-3 py-2 rounded {{ $isActive ? 'bg-cyan-50 text-cyan-700 font-semibold' : 'hover:bg-cyan-50 hover:text-cyan-700' }} transition">{{ $item['label'] }}</a>
+                    <a href="{{ $href }}" wire:navigate class="block px-3 py-2 rounded {{ $isActive ? 'bg-cyan-50 text-cyan-700 font-semibold' : 'hover:bg-cyan-50 hover:text-cyan-700' }} transition">{{ $item['label'] }}</a>
                 @endif
             @endforeach
 
-            <a href="{{ \Illuminate\Support\Facades\Route::has('contact') ? route('contact') : url('/contact') }}" class="mt-3 inline-block text-center bg-cyan-700 text-white py-2.5 rounded-md font-medium hover:bg-cyan-700 transition">
+            <a href="{{ \Illuminate\Support\Facades\Route::has('contact') ? route('contact') : url('/contact') }}" wire:navigate class="mt-3 inline-block text-center bg-cyan-700 text-white py-2.5 rounded-md font-medium hover:bg-cyan-700 transition">
                 <i class="fa-solid fa-phone mr-2"></i> Get Consultation
             </a>
         </nav>
