@@ -17,7 +17,7 @@
                 x-transition:enter="transition ease-out duration-700"
                 x-transition:enter-start="opacity-0 -translate-x-10"
                 x-transition:enter-end="opacity-100 translate-x-0">
-                <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6 font-bebas tracking-wide">
+                <h1 class="text-3xl font-extrabold sm:text-4xl md:text-6xl md:font-bold text-gray-900 leading-tight mb-6 font-bebas tracking-wide">
                     Empowering Your Growth with <span class="text-cyan-800">Expert Financial Guidance</span>
                 </h1>
 
@@ -118,7 +118,7 @@
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center px-4 sm:px-8">
             <div class="relative">
                 <div class="overflow-hidden rounded-2xl">
-                    <img src="{{ asset('images/office-desk-6952919_1280.jpg') }}" alt="About CA Firm" class="rounded-2xl shadow-lg object-cover w-full h-auto sm:h-72 md:h-auto">
+                    <img src="{{ asset('images/hero1.jpg') }}" alt="About CA Firm" class="rounded-2xl shadow-lg object-cover w-full h-auto sm:h-72 md:h-auto">
                     <div class="absolute inset-0 bg-cyan-700/10 rounded-2xl pointer-events-none"></div>
                 </div>
             </div>
