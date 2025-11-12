@@ -5,7 +5,7 @@
         <!-- Brand Info -->
         <div>
             <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-lg bg-green-600 flex items-center justify-center text-white font-semibold text-lg shadow-md">
+                <div class="w-12 h-12 rounded-lg bg-cyan-700 flex items-center justify-center text-white font-semibold text-lg shadow-md">
                     AC
                 </div>
                 <div>
@@ -25,10 +25,10 @@
                 Quick Links
             </h3>
             <ul class="mt-4 space-y-2 text-sm text-gray-600">
-                <li><a href="/services" class="hover:text-green-600 transition-colors flex items-center gap-2"><span>›</span> Services</a></li>
-                <li><a href="/about" class="hover:text-green-600 transition-colors flex items-center gap-2"><span>›</span> About</a></li>
-                <li><a href="/team" class="hover:text-green-600 transition-colors flex items-center gap-2"><span>›</span> Team</a></li>
-                <li><a href="/contact" class="hover:text-green-600 transition-colors flex items-center gap-2"><span>›</span> Contact</a></li>
+                <li><a href="/services" class="hover:text-cyan-700 transition-colors flex items-center gap-2"><span>›</span> Services</a></li>
+                <li><a href="/about" class="hover:text-cyan-700 transition-colors flex items-center gap-2"><span>›</span> About</a></li>
+                <li><a href="/team" class="hover:text-cyan-700 transition-colors flex items-center gap-2"><span>›</span> Team</a></li>
+                <li><a href="/contact" class="hover:text-cyan-700 transition-colors flex items-center gap-2"><span>›</span> Contact</a></li>
             </ul>
         </div>
 
@@ -38,11 +38,11 @@
                 Our Services
             </h3>
             <ul class="mt-4 space-y-2 text-sm text-gray-600">
-                <li><span class="hover:text-green-600 cursor-pointer">Tax Planning & Compliance</span></li>
-                <li><span class="hover:text-green-600 cursor-pointer">Audit & Assurance</span></li>
-                <li><span class="hover:text-green-600 cursor-pointer">Business Advisory</span></li>
-                <li><span class="hover:text-green-600 cursor-pointer">Payroll & GST Management</span></li>
-                <li><span class="hover:text-green-600 cursor-pointer">Financial Reporting</span></li>
+                <li><span class="hover:text-cyan-700 cursor-pointer">Tax Planning & Compliance</span></li>
+                <li><span class="hover:text-cyan-700 cursor-pointer">Audit & Assurance</span></li>
+                <li><span class="hover:text-cyan-700 cursor-pointer">Business Advisory</span></li>
+                <li><span class="hover:text-cyan-700 cursor-pointer">Payroll & GST Management</span></li>
+                <li><span class="hover:text-cyan-700 cursor-pointer">Financial Reporting</span></li>
             </ul>
         </div>
 
@@ -53,25 +53,25 @@
             </h3>
             <ul class="mt-4 space-y-3 text-sm text-gray-600">
                 <li class="flex items-start gap-2">
-                    <span class="text-green-600 mt-0.5"><i class="fas fa-phone-alt"></i></span>
+                    <span class="text-cyan-700 mt-0.5"><i class="fas fa-phone-alt"></i></span>
                     <span>+91 98765 43210</span>
                 </li>
                 <li class="flex items-start gap-2">
-                    <span class="text-green-600 mt-0.5"><i class="fas fa-envelope"></i></span>
+                    <span class="text-cyan-700 mt-0.5"><i class="fas fa-envelope"></i></span>
                     <span>info@techonikaca.com</span>
                 </li>
                 <li class="flex items-start gap-2">
-                    <span class="text-green-600 mt-0.5"><i class="fas fa-map-marker-alt"></i></span>
+                    <span class="text-cyan-700 mt-0.5"><i class="fas fa-map-marker-alt"></i></span>
                     <span>Delhi NCR, India</span>
                 </li>
             </ul>
 
             <!-- Social Links -->
             <div class="mt-5 flex space-x-4">
-                <a href="#" class="text-gray-500 hover:text-green-600 transition"><i class="fab fa-linkedin text-xl"></i></a>
-                <a href="#" class="text-gray-500 hover:text-green-600 transition"><i class="fab fa-twitter text-xl"></i></a>
-                <a href="#" class="text-gray-500 hover:text-green-600 transition"><i class="fab fa-facebook text-xl"></i></a>
-                <a href="#" class="text-gray-500 hover:text-green-600 transition"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-cyan-700 transition"><i class="fab fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-cyan-700 transition"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-cyan-700 transition"><i class="fab fa-facebook text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-cyan-700 transition"><i class="fab fa-instagram text-xl"></i></a>
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@
             © {{ date('Y') }} <span class="font-medium text-gray-700">ABC & Co.</span> — All Rights Reserved.
         </p>
         <p class="text-xs mt-1">
-            Designed & Maintained with ❤️ by <a href="#" class="text-green-600 hover:underline">Techonik</a>
+            Designed & Maintained with ❤️ by <a href="#" class="text-cyan-700 hover:underline">Techonika</a>
         </p>
     </div>
 </footer>
