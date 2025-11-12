@@ -90,23 +90,21 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                @foreach ([
-                ['fa-calculator', 'Accounting', 'Accurate bookkeeping, financial statements, and cash-flow planning to keep your business healthy.'],
-                ['fa-magnifying-glass-chart', 'Auditing & Assurance', 'Independent audits and internal control reviews that strengthen investor and lender confidence.'],
-                ['fa-file-invoice-dollar', 'Income Tax', 'Proactive tax planning, returns, and representation to minimise liabilities and compliance risk.'],
-                ['fa-receipt', 'GST & Indirect Tax', 'End-to-end GST registration, filing and advisory for smooth operations and reduced disputes.'],
-                ['fa-building-columns', 'Company Law & Compliance', 'Incorporation, ROC filings and corporate secretarial services to keep your entity compliant.'],
-                ['fa-rocket', 'Startup Services', 'From company setup to funding-ready financials — we help startups move faster with confidence.']
-                ] as [$icon, $title, $copy])
+                @foreach($services ?? collect() as $service)
+
+                @php
+                    $icon = ($icons[$service->slug] ?? 'fa-briefcase');
+                    $excerpt = \Illuminate\Support\Str::limit($service->description ?? '', 120);
+                @endphp
 
                 <div class="rounded-2xl p-1" style="background: repeating-linear-gradient(135deg,#07324a 0 12px,#0f6b86 12px 24px);">
                     <div class="bg-white rounded-xl p-6 h-full flex flex-col items-center text-center shadow-md">
                         <div class="w-20 h-20 flex items-center justify-center mb-4 bg-cyan-50 rounded-full">
                             <i class="fa-solid {{ $icon }} text-cyan-700 text-3xl"></i>
                         </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2">{{ $title }}</h4>
-                        <p class="text-gray-600 text-sm mb-4">{{ $copy }}</p>
-                        <a href="/services" class="mt-auto inline-block bg-cyan-700 text-white px-5 py-2 rounded-full text-sm font-medium hover:opacity-95">Get Quote</a>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-2">{{ $service->name }}</h4>
+                        <p class="text-gray-600 text-sm mb-4">{{ $excerpt }}</p>
+                        <a href="{{route('service.view', ['slug' => $service->slug])}}" class="mt-auto inline-block bg-cyan-700 text-white px-5 py-2 rounded-full text-sm font-medium hover:opacity-95">Read More</a>
                     </div>
                 </div>
 
@@ -133,7 +131,7 @@
                     Backed by experienced professionals and innovative solutions, we simplify complexities, ensure compliance, and empower businesses to achieve their strategic goals.
                 </p>
                 <a href="/about" class="inline-block bg-cyan-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-cyan-700 transition duration-300 transform hover:-translate-y-1">
-                    Get Quote
+                    Read More
                 </a>
             </div>
         </div>
