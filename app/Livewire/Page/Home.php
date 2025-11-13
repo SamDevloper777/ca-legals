@@ -31,6 +31,6 @@ class Home extends Component
         return view('livewire.page.home', [
             'services' => $this->services,
             'icons' => $this->icons,
-        ]);
+        ])->layout('components.layouts.app', ['title' => 'Home']);
     }
 }

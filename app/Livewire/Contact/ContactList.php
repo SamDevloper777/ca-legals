@@ -3,8 +3,6 @@
 namespace App\Livewire\Contact;
 
 use App\Models\Contact;
-use Livewire\Attributes\Layout;
-use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -16,11 +14,8 @@ class ContactList extends Component
     public $perPage = 10;
 
     public $confirmingDeleteId = null;
+    protected $listeners = ['refreshContacts' => '$refresh'];
 
-  
-
-    #[Layout('components.layouts.admin')]
-    #[On('refreshContacts')]
     public function render()
     {
         $contacts = Contact::when($this->search, function ($q) {
@@ -31,7 +26,8 @@ class ContactList extends Component
             ->orderBy('created_at', 'desc')
             ->paginate($this->perPage);
 
-        return view('livewire.contact.contact-list', compact('contacts'));
+        return view('livewire.contact.contact-list', compact('contacts'))
+            ->layout('components.layouts.admin', ['title' => 'Contacts']);
     }
 
     public function updatingSearch()
@@ -86,7 +82,7 @@ class ContactList extends Component
         if ($c) {
             $c->delete();
             session()->flash('success', 'Contact deleted.');
-            $this->dispatch('refreshContacts');
+            $this->emit('refreshContacts');
         }
     }
 }

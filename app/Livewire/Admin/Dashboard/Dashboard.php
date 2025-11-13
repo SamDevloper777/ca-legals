@@ -5,12 +5,10 @@ namespace App\Livewire\Admin\Dashboard;
 use App\Models\Contact;
 use App\Models\Service;
 use App\Models\User;
-use Livewire\Attributes\Layout;
 use Livewire\Component;
 
 class Dashboard extends Component
 {
-    #[Layout('components.layouts.admin')]
     public function render()
     {
         $servicesCount = Service::count();
@@ -23,7 +21,7 @@ class Dashboard extends Component
 
         return view('livewire.admin.dashboard.dashboard', compact(
             'servicesCount', 'usersCount', 'contactsCount', 'processedCount', 'unprocessedCount', 'recentContacts'
-        ));
+        ))->layout('components.layouts.admin', ['title' => 'Admin Dashboard']);
     }
 
     public function markProcessed($id)

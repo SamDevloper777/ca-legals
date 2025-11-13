@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ServiceSeeder::class,
             LoginSeeder::class,
-            \Database\Seeders\ContactSeeder::class,
+            // \Database\Seeders\ContactSeeder::class,
         ]);
     }
 }
