@@ -1,7 +1,6 @@
 <main class="flex-1  bg-gradient-to-r from-cyan-50 via-white to-cyan-50  container mx-auto px-4 sm:py-16 space-y-12 sm:space-y-24">
 
-    {{-- Consultation form modal component (Livewire) --}}
-    <livewire:form.consultation-form />
+
 
     <!-- Hero Section -->
     <!-- Hero Section -->
@@ -30,7 +29,7 @@
 
                 <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center mt-2">
                     <button type="button" wire:click="$dispatch('openConsultation')"
-                        class="w-full sm:w-auto text-center bg-emerald-600 text-white px-6 py-3 rounded-lg font-medium shadow hover:bg-emerald-700 transition duration-300 transform hover:-translate-y-0.5">
+                        class="w-full sm:w-auto text-center bg-cyan-700 text-white px-6 py-3 rounded-lg font-medium shadow hover:bg-cyan-600 transition duration-300 transform hover:-translate-y-0.5">
                         Get Consultation
                     </button>
                     <a href="#ca-works"

@@ -47,7 +47,26 @@
     @endif
     @endif
     @livewireScripts
+</head>
 
+<body>
+    {{-- Floating consultation button (site-wide) --}}
+    <div class="fixed right-6 bottom-16 md:right-12 md:bottom-20 z-50 group">
+        <button id="floating-consult-btn" aria-label="Get Consultation" title="Get Consultation"
+            class="relative inline-flex items-center justify-center w-14 h-14 rounded-full shadow-2xl transform transition-all duration-200 ease-out bg-gradient-to-br from-cyan-500 to-cyan-700 text-white ring-2 ring-cyan-300 hover:scale-105 focus:outline-none  md:w-16 md:h-16"
+            onclick="(function(){ if (window.Livewire && typeof Livewire.emit === 'function') { Livewire.emit('openConsultation'); } else if (window.Livewire && typeof Livewire.dispatch === 'function') { Livewire.dispatch('openConsultation'); } window.dispatchEvent(new CustomEvent('openConsultation')); })();">
+            <!-- subtle animated ping behind the button -->
+            <span class="absolute -inset-1 rounded-full bg-cyan-400 opacity-30 blur-sm animate-ping"></span>
+            <i class="fa-solid fa-headset fa-lg z-10"></i>
+        </button>
+
+        <!-- Tooltip that appears on hover -->
+        <div class="absolute right-20 bottom-1/2 transform translate-y-1/2 hidden group-hover:block">
+            <div class="bg-white text-cyan-700 px-3 py-2 rounded-md shadow-md text-sm font-medium">Get Consultation</div>
+        </div>
+    </div>
+    <livewire:form.consultation-form />
+    @livewireScripts
 </body>
 
 </html>

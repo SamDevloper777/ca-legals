@@ -1,6 +1,24 @@
 {
+  "node_modules/@alpinejs/collapse/dist/module.esm.js": {
+    "file": "assets/module.esm-CuQk7fLq.js",
+    "name": "module.esm",
+    "src": "node_modules/@alpinejs/collapse/dist/module.esm.js",
+    "isDynamicEntry": true
+  },
+  "node_modules/@alpinejs/intersect/dist/module.esm.js": {
+    "file": "assets/module.esm-C792mOEM.js",
+    "name": "module.esm",
+    "src": "node_modules/@alpinejs/intersect/dist/module.esm.js",
+    "isDynamicEntry": true
+  },
+  "node_modules/alpinejs/dist/module.esm.js": {
+    "file": "assets/module.esm-D7Ukx6u1.js",
+    "name": "module.esm",
+    "src": "node_modules/alpinejs/dist/module.esm.js",
+    "isDynamicEntry": true
+  },
   "resources/css/app.css": {
-    "file": "assets/app-uzrKqSWW.css",
+    "file": "assets/app-D5aXef05.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,9 +27,16 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-C7-w5fOo.js",
+    "file": "assets/app-CPcXOKFW.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "dynamicImports": [
+      "node_modules/@alpinejs/intersect/dist/module.esm.js",
+      "node_modules/@alpinejs/collapse/dist/module.esm.js",
+      "node_modules/alpinejs/dist/module.esm.js",
+      "node_modules/@alpinejs/intersect/dist/module.esm.js",
+      "node_modules/@alpinejs/collapse/dist/module.esm.js"
+    ]
   }
 }
