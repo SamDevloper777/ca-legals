@@ -9,6 +9,8 @@ use App\Livewire\Page\ServiceView;
 use App\Livewire\Login;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+
 
 Route::post('/logout', function(){
     Auth::logout();
@@ -24,7 +26,13 @@ Route::get('/login', Login::class)->name('login');
 Route::get('/service/{slug}',ServiceView::class)->name('service.view');
 
 
+Route::get('/clear-cache', function () {
+    Artisan::call('optimize:clear');
+    Artisan::call('event:clear');
+    Artisan::call('clear-compiled');
 
+    return '<h3> All caches cleared successfully!</h3>';
+});
 
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
     Route::get('/', Dashboard::class)->name('dashboard');

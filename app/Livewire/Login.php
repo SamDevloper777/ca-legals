@@ -24,9 +24,8 @@ class Login extends Component
 
         if (Auth::attempt($credentials, $this->remember)) {
             session()->regenerate();
-            return redirect()->route('admin.service.list');
+            return redirect()->route('admin.dashboard');
         }
-        return redirect()->route('admin.dashboard');
         $this->addError('email', 'The provided credentials do not match our records.');
     }
 
