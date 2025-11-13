@@ -32,7 +32,7 @@
     <style>[x-cloak]{display:none!important;} .transition-fast{transition:all .25s ease}</style>
 </head>
 
-<body class="antialiased bg-gray-50 text-gray-800">
+<body class="antialiased bg-cyan-50 text-gray-800">
     <livewire:admin.include.sidebar />
 
     <div class="lg:pl-64 min-h-screen flex flex-col">
