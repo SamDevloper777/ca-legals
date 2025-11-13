@@ -1,4 +1,15 @@
 <!-- footer.blade.php -->
+@php
+    use Illuminate\Support\Str;
+    $routeName = Route::currentRouteName();
+    $currentSlug = request()->segment(2); // used for /service/{slug}
+    $currentService = null;
+    if ($currentSlug) {
+        $currentService = \App\Models\Service::where('slug', $currentSlug)->first();
+    }
+    $servicesList = \App\Models\Service::orderBy('id')->take(8)->get();
+@endphp
+
 <footer class="bg-gray-50 border-t border-gray-200 text-gray-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
 
@@ -25,10 +36,22 @@
                 Quick Links
             </h3>
             <ul class="mt-4 space-y-2 text-sm text-gray-600">
-                <li><a href="/services" class="hover:text-cyan-700 transition-colors flex items-center gap-2"><span>›</span> Services</a></li>
-                <li><a href="/about" class="hover:text-cyan-700 transition-colors flex items-center gap-2"><span>›</span> About</a></li>
-                <li><a href="/team" class="hover:text-cyan-700 transition-colors flex items-center gap-2"><span>›</span> Team</a></li>
-                <li><a href="/contact" class="hover:text-cyan-700 transition-colors flex items-center gap-2"><span>›</span> Contact</a></li>
+                <li>
+                    <a wire:navigate href="/" class="transition-colors flex items-center gap-2 {{ $routeName === 'about' ? 'text-cyan-700' : 'hover:text-cyan-700' }}">
+                        <span>›</span> Home
+                    </a>
+                </li>
+                <li>
+                    <a wire:navigate href="/about" class="transition-colors flex items-center gap-2 {{ $routeName === 'about' ? 'text-cyan-700' : 'hover:text-cyan-700' }}">
+                        <span>›</span> About
+                    </a>
+                </li>
+                   
+                <li>
+                    <a wire:navigate href="/contact" class="transition-colors flex items-center gap-2 {{ $routeName === 'contact' ? 'text-cyan-700' : 'hover:text-cyan-700' }}">
+                        <span>›</span> Contact
+                    </a>
+                </li>
             </ul>
         </div>
 
@@ -38,11 +61,13 @@
                 Our Services
             </h3>
             <ul class="mt-4 space-y-2 text-sm text-gray-600">
-                <li><span class="hover:text-cyan-700 cursor-pointer">Tax Planning & Compliance</span></li>
-                <li><span class="hover:text-cyan-700 cursor-pointer">Audit & Assurance</span></li>
-                <li><span class="hover:text-cyan-700 cursor-pointer">Business Advisory</span></li>
-                <li><span class="hover:text-cyan-700 cursor-pointer">Payroll & GST Management</span></li>
-                <li><span class="hover:text-cyan-700 cursor-pointer">Financial Reporting</span></li>
+                @forelse($servicesList as $s)
+                    <li>
+                            <a href="{{ route('service.view', ['slug' => $s->slug]) }}" wire:navigate class="hover:text-cyan-700 transition">{{ $s->name }}</a>
+                    </li>
+                @empty
+                    <li class="text-gray-500">No services found.</li>
+                @endforelse
             </ul>
         </div>
 
@@ -54,15 +79,15 @@
             <ul class="mt-4 space-y-3 text-sm text-gray-600">
                 <li class="flex items-start gap-2">
                     <span class="text-cyan-700 mt-0.5"><i class="fas fa-phone-alt"></i></span>
-                    <span>+91 98765 43210</span>
+                    <span>{{ config('app.contact_phone', '+91 98765 43210') }}</span>
                 </li>
                 <li class="flex items-start gap-2">
                     <span class="text-cyan-700 mt-0.5"><i class="fas fa-envelope"></i></span>
-                    <span>info@techonikaca.com</span>
+                    <span>{{ config('app.contact_email', 'info@techonikaca.com') }}</span>
                 </li>
                 <li class="flex items-start gap-2">
                     <span class="text-cyan-700 mt-0.5"><i class="fas fa-map-marker-alt"></i></span>
-                    <span>Delhi NCR, India</span>
+                    <span>{{ config('app.address', 'Delhi NCR, India') }}</span>
                 </li>
             </ul>
 
