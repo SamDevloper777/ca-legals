@@ -4,7 +4,7 @@
         <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div>
                 <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3 font-bebas tracking-wide">Get In Touch</h1>
-                <p class="text-gray-700">Have a question or need expert advice? Our Chartered Accountants are here to help — reach out and we'll get back within 24 hours.</p>
+                <p class="text-gray-700">Have a question or need expert advice? Our Chartered Accountants are here to help reach out and we'll get back within 24 hours.</p>
                 <div class="mt-6 flex flex-col sm:flex-row gap-3">
                     <a href="#contact-form" class="inline-block bg-cyan-700 text-white px-6 py-3 rounded-lg font-medium shadow hover:bg-cyan-800 transition w-full sm:w-auto text-center">Request Consultation</a>
                     <a href="#info" class="inline-block border border-cyan-700 text-cyan-700 px-6 py-3 rounded-lg font-medium hover:bg-cyan-700 hover:text-white transition w-full sm:w-auto text-center">Contact Details</a>

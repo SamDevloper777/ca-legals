@@ -22,7 +22,6 @@
             <label class="inline-flex items-center text-sm">
                 <input wire:model="remember" type="checkbox" class="mr-2"> Remember me
             </label>
-            <a href="#" class="text-sm text-cyan-700 hover:underline">Forgot password?</a>
         </div>
 
         <div>
