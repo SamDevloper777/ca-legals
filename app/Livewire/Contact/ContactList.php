@@ -3,6 +3,7 @@
 namespace App\Livewire\Contact;
 
 use App\Models\Contact;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -14,8 +15,8 @@ class ContactList extends Component
     public $perPage = 10;
 
     public $confirmingDeleteId = null;
-    protected $listeners = ['refreshContacts' => '$refresh'];
 
+    #[On('refreshContacts')]
     public function render()
     {
         $contacts = Contact::when($this->search, function ($q) {
@@ -73,7 +74,7 @@ class ContactList extends Component
         }
 
         $this->confirmingDeleteId = null;
-        $this->emit('refreshContacts');
+        $this->dispatch('refreshContacts');
     }
 
     public function deleteById($id)
@@ -82,7 +83,7 @@ class ContactList extends Component
         if ($c) {
             $c->delete();
             session()->flash('success', 'Contact deleted.');
-            $this->emit('refreshContacts');
+            $this->dispatch('refreshContacts');
         }
     }
 }

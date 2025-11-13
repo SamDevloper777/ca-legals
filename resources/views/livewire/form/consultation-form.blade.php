@@ -23,7 +23,7 @@
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Email</label>
+                            <label class="block text-sm font-medium text-gray-700">Email (optional)</label>
                             <input type="email" wire:model.defer="email" class="mt-1 block w-full rounded-md border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-200">
                             @error('email') <div class="text-xs text-red-600 mt-1">{{ $message }}</div> @enderror
                         </div>
@@ -31,7 +31,7 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Phone (optional)</label>
+                            <label class="block text-sm font-medium text-gray-700">Phone</label>
                             <input type="text" wire:model.defer="phone" class="mt-1 block w-full rounded-md border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-200">
                             @error('phone') <div class="text-xs text-red-600 mt-1">{{ $message }}</div> @enderror
                         </div>

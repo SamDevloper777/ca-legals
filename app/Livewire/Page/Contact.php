@@ -14,7 +14,7 @@ class Contact extends Component
 
     protected $rules = [
         'name' => 'required|string|max:255',
-        'email' => 'required|email|max:255',
+        'email' => 'nullable|email|max:255',
         'phone' => 'required|string|max:20',
         'service' => 'nullable|string|max:255',
         'message' => 'required|string|min:5',

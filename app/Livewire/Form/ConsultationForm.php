@@ -28,8 +28,8 @@ class ConsultationForm extends Component
 
     protected $rules = [ 
         'name' => 'required|string|max:255',
-        'email' => 'required|email|max:255',
-        'phone' => 'nullable|string|max:30',
+        'email' => 'nullable|email|max:255',
+        'phone' => 'required|string|max:30',
         'service' => 'nullable|string|max:255',
         'message' => 'nullable|string|max:2000',
     ];

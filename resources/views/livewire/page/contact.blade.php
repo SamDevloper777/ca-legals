@@ -96,8 +96,30 @@
     <!-- Contact Form + Map -->
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Contact Form -->
+         
         <div class="lg:col-span-2 bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
             <h2 class="text-2xl font-semibold text-gray-900 mb-4">Send Us a Message</h2>
+
+            {{-- Session / Flash Messages --}}
+            @if (session('success'))
+                <div class="mb-4 p-4 rounded-md bg-emerald-50 border border-emerald-100 text-emerald-800">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if (session('info'))
+                <div class="mb-4 p-4 rounded-md bg-cyan-50 border border-cyan-100 text-cyan-800">
+                    {{ session('info') }}
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="mb-4 p-4 rounded-md bg-rose-50 border border-rose-100 text-rose-800">
+                    {{ session('error') }}
+                </div>
+            @endif
+
+            {{-- Per-field validation messages are shown below each input --}}
 
             <form wire:submit.prevent="submit" id="contact-form" class="space-y-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -106,12 +128,14 @@
                         <input wire:model="name" type="text"
                             class="w-full border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-200"
                             placeholder="Your name">
+                        @error('name') <p class="text-sm text-rose-600 mt-1">{{ $message }}</p> @enderror
                     </div>
                     <div>
                         <label class="block text-sm text-gray-700 mb-1">Email</label>
                         <input wire:model="email" type="email"
                             class="w-full border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-200"
                             placeholder="you@example.com">
+                        @error('email') <p class="text-sm text-rose-600 mt-1">{{ $message }}</p> @enderror
                     </div>
                 </div>
 
@@ -120,6 +144,7 @@
                     <input wire:model="phone" type="number"
                         class="w-full border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-200"
                         placeholder="Enter your phone number">
+                    @error('phone') <p class="text-sm text-rose-600 mt-1">{{ $message }}</p> @enderror
                 </div>
 
                 <div>
@@ -127,6 +152,7 @@
                     <textarea wire:model="message" rows="5"
                         class="w-full border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-200"
                         placeholder="How can we help?"></textarea>
+                    @error('message') <p class="text-sm text-rose-600 mt-1">{{ $message }}</p> @enderror
                 </div>
 
                 <button type="submit"
