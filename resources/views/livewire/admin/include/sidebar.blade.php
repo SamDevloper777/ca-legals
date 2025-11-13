@@ -1,5 +1,4 @@
 <div x-data="{ open: false }" x-on:toggle-admin-sidebar.window="open = !open">
-    <!-- Mobile off-canvas sidebar (visible when `open`) -->
     <div x-show="open" x-cloak class="fixed inset-0 z-40 flex lg:hidden" aria-hidden="true">
         <div class="fixed inset-0 bg-black/50" @click="open = false"></div>
         <aside class="relative flex-1 max-w-xs w-full bg-white shadow-xl ring-1 ring-cyan-50">

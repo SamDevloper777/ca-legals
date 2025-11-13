@@ -22,7 +22,7 @@
 
             <div class="flex items-center gap-4">
                 <!-- Search (optional) -->
-                <div class="hidden sm:block">
+                <!-- <div class="hidden sm:block">
                     <label class="sr-only">Search</label>
                     <div class="relative">
                         <input type="search" placeholder="Search..." class="bg-white border border-cyan-100 rounded-lg px-3 py-2 text-sm text-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-300">
@@ -30,7 +30,7 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- User / actions -->
                 <div class="flex items-center gap-3">
@@ -43,8 +43,7 @@
                             <span class="text-sm text-white">Admin</span>
                         </button>
                         <div x-show="open" @click.outside="open = false" x-transition class="origin-top-right absolute right-0 mt-2 w-44 bg-white border border-gray-100 rounded-md shadow-lg py-2 text-gray-700">
-                            <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-50">Profile</a>
-                            <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-50">Settings</a>
+
                             <form method="POST" action="/logout">
                                 @csrf
                                 <button type="submit" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50">Logout</button>
