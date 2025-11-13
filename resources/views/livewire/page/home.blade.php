@@ -1,9 +1,5 @@
 <main class="flex-1  bg-gradient-to-r from-cyan-50 via-white to-cyan-50  container mx-auto px-4 sm:py-16 space-y-12 sm:space-y-24">
 
-
-
-    <!-- Hero Section -->
-    <!-- Hero Section -->
     <section
         x-data="{ visible: false }"
         x-init="setTimeout(() => visible = true, 300)"
@@ -24,7 +20,7 @@
                 </h1>
 
                 <p class="text-lg text-gray-600 mb-8">
-                    Professional Chartered Accountancy, Taxation, Audit, and Business Consulting  trusted by 1000+ clients for accuracy, ethics, and excellence.
+                    Professional Chartered Accountancy, Taxation, Audit, and Business Consulting  trusted by 100+ clients for accuracy, ethics, and excellence.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center mt-2">
@@ -32,7 +28,7 @@
                         class="w-full sm:w-auto text-center bg-cyan-700 text-white px-6 py-3 rounded-lg font-medium shadow hover:bg-cyan-600 transition duration-300 transform hover:-translate-y-0.5">
                         Get Consultation
                     </button>
-                    <a href="#ca-works"
+                    <a href="#service"
                         class="w-full sm:w-auto text-center border border-cyan-700 text-cyan-700 px-6 py-3 rounded-lg font-medium hover:bg-cyan-700 hover:text-white transition duration-300 transform hover:-translate-y-0.5">
                         Explore Services
                     </a>
@@ -41,11 +37,11 @@
                 <div class="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-6 text-sm text-gray-500">
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 bg-cyan-700 rounded-full animate-ping"></span>
-                        20+ Years Experience
+                        27+ Years Experience
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 bg-cyan-700 rounded-full animate-ping"></span>
-                        1000+ Satisfied Clients
+                        100+ Satisfied Clients
                     </div>
                 </div>
             </div>
@@ -60,7 +56,7 @@
                 <div class="relative flex justify-center">
                     <div class="relative">
                         <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
-                            <img src="{{ asset('images/office-desk-6952919_1280.jpg') }}"
+                            <img src="{{ asset('images/pexels-asphotography-95916.jpg') }}"
                                 alt="CA illustration"
                                 class="w-full max-w-xl lg:max-w-2xl object-cover h-64 sm:h-96 md:h-[420px] lg:h-[520px]">
                         </div>
@@ -79,12 +75,8 @@
             </div>
         </div>
     </section>
-
-
-   
-
     <!-- Featured Services (image cards) -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-white" id="service">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-10">
                 <h3 class="text-3xl md:text-5xl font-bold text-cyan-800 font-playfair">Featured Services</h3>
@@ -109,7 +101,6 @@
                         <a href="{{route('service.view', ['slug' => $service->slug])}}" class="mt-auto inline-block bg-cyan-700 text-white px-5 py-2 rounded-full text-sm font-medium hover:opacity-95">Read More</a>
                     </div>
                 </div>
-
                 @endforeach
             </div>
         </div>
@@ -125,9 +116,9 @@
                 </div>
             </div>
             <div>
-                <h2 class="text-3xl font-bold text-cyan-700 mb-5 font-playfair">About ABC & Co.</h2>
+                <h2 class="text-3xl font-bold text-cyan-700 mb-5 font-playfair">About ADR & ASSOCIATES</h2>
                 <p class="text-gray-700 mb-4 leading-relaxed">
-                    Founded in 2001, <strong>ABC & Co.</strong> is a reputed Chartered Accountancy firm offering a full spectrum of financial, taxation, and advisory services. Our commitment to integrity and excellence ensures our clients’ success and growth.
+                   Founded in 2002, we at <strong>ADR & Associates</strong> deliver trusted chartered accountancy services across India. With our head office in Kolkata and branches in Asansol, we offer Audit & Assurance, Tax Advisory, Corporate Advisory, Insolvency, and M&A services. Backed by over 27 years of leadership experience, we proudly serve diverse clients, including banks and large enterprises.
                 </p>
                 <p class="text-gray-700 mb-6 leading-relaxed">
                     Backed by experienced professionals and innovative solutions, we simplify complexities, ensure compliance, and empower businesses to achieve their strategic goals.
@@ -161,17 +152,17 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="bg-gradient-to-r from-white via-cyan-50 to-white rounded-3xl py-12 sm:py-16">
+ 
+    {{--<section class="bg-gradient-to-r from-white via-cyan-50 to-white rounded-3xl py-12 sm:py-16">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-cyan-700 mb-3 font-playfair">Client Testimonials</h2>
             <p class="text-gray-600 text-lg">Hear from businesses that trust our expertise.</p>
         </div>
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 px-4 md:px-8">
             @foreach ([
-            ['"ABC & Co. made our tax filing smooth and stress-free. Highly professional team!"', 'Ravi Sharma', 'Entrepreneur'],
+            ['"ADR & ASSOCIATES made our tax filing smooth and stress-free. Highly professional team!"', 'Ravi Sharma', 'Entrepreneur'],
             ['"Their audit service helped us improve internal controls and compliance."', 'Priya Mehta', 'Finance Head, TechCorp'],
-            ['"We trust ABC & Co. for all financial advisory and strategy planning."', 'Anil Kumar', 'Managing Director']
+            ['"We trust ADR & ASSOCIATES for all financial advisory and strategy planning."', 'Anil Kumar', 'Managing Director']
             ] as [$quote, $name, $role])
             <div class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-lg transition transform hover:-translate-y-1">
                 <p class="text-gray-600 italic mb-4">{{ $quote }}</p>
@@ -180,7 +171,7 @@
             </div>
             @endforeach
         </div>
-    </section>
+    </section>--}}
 
     <!-- faq.blade.php -->
     <section class="bg-gray-50 py-12 sm:py-16">
@@ -197,7 +188,7 @@
                 <div class="bg-white shadow-sm rounded-lg border border-gray-100">
                     <button @click="open === 1 ? open = null : open = 1"
                         class="w-full flex justify-between items-center px-6 py-4 text-left text-gray-800 font-medium focus:outline-none">
-                        <span>What services does ABC & Co. provide?</span>
+                        <span>What services does ADR & ASSOCIATES provide?</span>
                         <svg xmlns="http://www.w3.org/2000/svg" :class="{'rotate-180': open === 1}" class="w-5 h-5 text-cyan-700 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
