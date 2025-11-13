@@ -49,7 +49,7 @@
 
                 <div>
                         <label class="block text-sm text-gray-700 mb-1">Phone <span class="text-red-500">*</span></label>
-                        <input wire:model="phone" type="text" required class="w-full border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-200" placeholder="Enter your phone number">
+                        <input wire:model="phone" type="number" required class="w-full border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-200" placeholder="Enter your phone number">
                 </div>
 
                 <div>

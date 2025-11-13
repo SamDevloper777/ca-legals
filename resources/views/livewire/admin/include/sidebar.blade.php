@@ -15,22 +15,19 @@
                 </button>
             </div>
             <nav class="px-2 py-4">
-                <a href="/admin" class="flex items-center gap-3 px-3 py-2 rounded-md text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900">
+                @php
+                    $r = request();
+                @endphp
+                <a wire:navigate href="{{ route('admin.dashboard') }}" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm {{ $r->routeIs('admin.dashboard') ? 'bg-cyan-50 text-cyan-900' : 'text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900' }}">
                     <i class="fa-solid fa-gauge-high w-4 text-cyan-600"></i>
                     <span>Dashboard</span>
                 </a>
-                <a href="/admin/services" class="flex items-center gap-3 mt-1 px-3 py-2 rounded-md text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900">
-                    <i class="fa-solid fa-briefcase w-4 text-cyan-600"></i>
-                    <span>Services</span>
-                </a>
-                <a href="/admin/users" class="flex items-center gap-3 mt-1 px-3 py-2 rounded-md text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900">
+              
+                <a wire:navigate href="{{ route('admin.contact.list') }}" class="flex items-center gap-3 mt-1 px-3 py-2 rounded-md text-sm {{ $r->routeIs('admin.contact.*') ? 'bg-cyan-50 text-cyan-900' : 'text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900' }}">
                     <i class="fa-solid fa-users w-4 text-cyan-600"></i>
-                    <span>Users</span>
+                    <span>Contacts List</span>
                 </a>
-                <a href="/admin/settings" class="flex items-center gap-3 mt-1 px-3 py-2 rounded-md text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900">
-                    <i class="fa-solid fa-gear w-4 text-cyan-600"></i>
-                    <span>Settings</span>
-                </a>
+             
             </nav>
         </aside>
         <div class="w-14 flex-shrink-0" aria-hidden="true"></div>
@@ -50,35 +47,25 @@
             </div>
             <div class="flex-1 overflow-y-auto">
                 <nav class="px-2 py-4 space-y-1">
-                    <a href="/admin" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900">
+                    @php $r = request(); @endphp
+                    <a wire:navigate href="{{ route('admin.dashboard') }}" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm {{ $r->routeIs('admin.dashboard') ? 'bg-cyan-50 text-cyan-900' : 'text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900' }}">
                         <i class="fa-solid fa-gauge-high w-4 text-cyan-600"></i>
                         <span>Dashboard</span>
                     </a>
-                    <a href="/admin/services" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900">
-                        <i class="fa-solid fa-briefcase w-4 text-cyan-600"></i>
-                        <span>Services</span>
-                    </a>
-                    <a href="/admin/services/create" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900">
-                        <i class="fa-solid fa-plus w-4 text-cyan-600"></i>
-                        <span>Add Service</span>
-                    </a>
-                    <a href="/admin/users" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900">
+               
+                    <a wire:navigate href="{{ route('admin.contact.list') }}" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm {{ $r->routeIs('admin.contact.*') ? 'bg-cyan-50 text-cyan-900' : 'text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900' }}">
                         <i class="fa-solid fa-users w-4 text-cyan-600"></i>
-                        <span>Users</span>
+                        <span>Contacts List</span>
                     </a>
-                    <a href="/admin/settings" class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-cyan-800 hover:bg-cyan-50 hover:text-cyan-900">
-                        <i class="fa-solid fa-gear w-4 text-cyan-600"></i>
-                        <span>Settings</span>
-                    </a>
-                </nav>
+               
             </div>
             <div class="p-4 border-t border-cyan-100 bg-cyan-50">
                 <div class="text-xs text-cyan-700">Logged in as</div>
                 <div class="mt-2 flex items-center gap-3">
                     <img src="{{ asset('images/logo.png') }}" alt="User" class="w-8 h-8 rounded-full object-cover">
                     <div>
-                        <div class="text-sm font-medium text-cyan-900">Admin</div>
-                        <div class="text-xs text-cyan-600">admin@example.com</div>
+                        <div class="text-sm font-medium text-cyan-900">{{ auth()->user()?->name ?? 'Admin' }}</div>
+                        <div class="text-xs text-cyan-600">{{ auth()->user()?->email ?? 'admin@example.com' }}</div>
                     </div>
                 </div>
             </div>
