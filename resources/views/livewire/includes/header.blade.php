@@ -30,7 +30,7 @@
                     ];
 
                     // Load top services for the dropdown
-                    $headerServices = \App\Models\Service::orderBy('id')->take(8)->get();
+                    $headerServices = \App\Models\Service::orderBy('id')->get();
                 @endphp
 
                 <nav class="flex items-center gap-6 text-sm font-medium">

@@ -7,7 +7,7 @@
     if ($currentSlug) {
         $currentService = \App\Models\Service::where('slug', $currentSlug)->first();
     }
-    $servicesList = \App\Models\Service::orderBy('id')->take(8)->get();
+    $servicesList = \App\Models\Service::orderBy('id')->get();
 @endphp
 
 <footer class="bg-gray-50 border-t border-gray-200 text-gray-700">
