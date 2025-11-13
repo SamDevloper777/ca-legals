@@ -55,15 +55,17 @@
                                 @endif
                             </td>
                             <td class="px-3 py-2 align-top">{{ $c->created_at->format('Y-m-d H:i') }}</td>
-                            <td class="px-3 py-2 align-top">
-                                @if(!$c->is_processed)
-                                <button wire:click="markProcessed({{ $c->id }})" class="px-2 py-1 bg-cyan-700 text-white rounded text-xs">Mark processed</button>
-                                @else
-                                <button wire:click="markUnprocessed({{ $c->id }})" class="px-2 py-1 bg-yellow-500 text-white rounded text-xs">Mark unprocessed</button>
-                                @endif
+                                <td class="px-3 py-2 align-top whitespace-normal">
+                                    <div class="flex flex-col items-center justify-center sm:flex-row sm:items-center gap-2">
+                                        @if(!$c->is_processed)
+                                            <button wire:click="markProcessed({{ $c->id }})" class="w-full sm:w-auto px-3 py-1.5 bg-cyan-700 text-white rounded text-xs">Check</button>
+                                        @else
+                                            <button wire:click="markUnprocessed({{ $c->id }})" class="w-full sm:w-auto px-3 py-1.5 bg-yellow-500 text-white rounded text-xs">Uncheck</button>
+                                        @endif
 
-                                <button @click="$dispatch('open-delete', {{ $c->id }})" class="ml-2 px-2 py-1 bg-red-600 text-white rounded text-xs">Delete</button>
-                            </td>
+                                        <button @click="$dispatch('open-delete', {{ $c->id }})" class="w-full sm:w-auto px-3 py-1.5 bg-red-600 text-white rounded text-xs">Delete</button>
+                                    </div>
+                                </td>
                         </tr>
                         @empty
                         <tr>
@@ -74,8 +76,8 @@
                 </table>
             </div>
 
-            <div class="mt-4">
-                {{ $contacts->links() }}
+            <div class="mt-4 flex justify-center">
+                {{ $contacts->links('vendor.pagination.livewire-tailwind') }}
             </div>
         </div>
     </div>
