@@ -7,6 +7,9 @@
 
     <title>{{ $title ?? 'CA' }}</title>
 
+    <!-- Favicon: SVG preferred with ICO fallback -->
+    <link  rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}">
+
     @if (file_exists(public_path('build/manifest.json')))
     @php
     $manifest = json_decode(file_get_contents(public_path('build/manifest.json')), true);
