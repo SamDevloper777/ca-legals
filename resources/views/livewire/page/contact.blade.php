@@ -41,13 +41,7 @@
             Floor, R.No.12A, Near Binani
             Dharmashala, Kolkata-700 006 ',
             'phones' => ['+91 9903095446', '+91 8620852167'],
-            'email' => 'adrassociates@yahoo.in'
-            ],
-            [
-            'title' => 'Kolkata Branch',
-            'address' => '3A, Chowringhee Place, 2nd Floor, R.No.70,<br>Kolkata - 700 013',
-            'phones' => ['+91 9051132111'],
-            'email' => 'rkchoudhary8@rediffmail.com'
+            'email' => 'adrassociates@yahoo.in,fcadst@gmail.com'
             ],
             [
             'title' => 'Asansol
@@ -56,9 +50,7 @@
             Tank, P.O.-Radha Nagar Road,
             Dist.- Burdwan, Asansol-713 325 ',
             'phones' => ['+91 9333797746 '],
-            'email' => '
-            caashok.asn@gmail.co
-            m '
+            'email' => 'caashok.asn@gmail.com'
             ]
             ];
             @endphp
@@ -69,7 +61,7 @@
                 <h3 class="text-lg font-semibold text-gray-800 mb-3">{{ $office['title'] }}</h3>
 
                 <div class="space-y-3 text-gray-600 text-sm">
-                    <div class="flex items-start justify-center gap-2">
+                    <div class="flex items-start justify-center gap-1">
                         <i class="fa-solid fa-location-dot text-cyan-700 mt-1"></i>
                         <p>{!! $office['address'] !!}</p>
                     </div>
@@ -96,27 +88,27 @@
     <!-- Contact Form + Map -->
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Contact Form -->
-         
+
         <div class="lg:col-span-2 bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
             <h2 class="text-2xl font-semibold text-gray-900 mb-4">Send Us a Message</h2>
 
             {{-- Session / Flash Messages --}}
             @if (session('success'))
-                <div class="mb-4 p-4 rounded-md bg-emerald-50 border border-emerald-100 text-emerald-800">
-                    {{ session('success') }}
-                </div>
+            <div class="mb-4 p-4 rounded-md bg-emerald-50 border border-emerald-100 text-emerald-800">
+                {{ session('success') }}
+            </div>
             @endif
 
             @if (session('info'))
-                <div class="mb-4 p-4 rounded-md bg-cyan-50 border border-cyan-100 text-cyan-800">
-                    {{ session('info') }}
-                </div>
+            <div class="mb-4 p-4 rounded-md bg-cyan-50 border border-cyan-100 text-cyan-800">
+                {{ session('info') }}
+            </div>
             @endif
 
             @if (session('error'))
-                <div class="mb-4 p-4 rounded-md bg-rose-50 border border-rose-100 text-rose-800">
-                    {{ session('error') }}
-                </div>
+            <div class="mb-4 p-4 rounded-md bg-rose-50 border border-rose-100 text-rose-800">
+                {{ session('error') }}
+            </div>
             @endif
 
             {{-- Per-field validation messages are shown below each input --}}
@@ -166,7 +158,7 @@
         <aside class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
             <h3 class="text-xl font-semibold mb-4">Locate Us</h3>
             <iframe class="w-full h-48 rounded-lg border-0"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.727975145343!2d88.35463!3d22.589275200000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277c8472d3761%3A0x4a1d7748fe386c1b!2sBinani%20Bhawan%2C%20Malapara%2C%20Jorabagan%2C%20Kolkata%2C%20West%20Bengal%20700006!5e0!3m2!1sen!2sin!4v1763037932984!5m2!1sen!2sin" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.727975145343!2d88.35463!3d22.589275200000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277c8472d3761%3A0x4a1d7748fe386c1b!2sBinani%20Bhawan%2C%20Malapara%2C%20Jorabagan%2C%20Kolkata%2C%20West%20Bengal%20700006!5e0!3m2!1sen!2sin!4v1763037932984!5m2!1sen!2sin"
                 allowfullscreen="" loading="lazy"></iframe>
             <p class="text-xs text-gray-500 mt-3">We respond during office hours: Mon - Fri, 9:30 AM - 6:30 PM IST</p>
         </aside>

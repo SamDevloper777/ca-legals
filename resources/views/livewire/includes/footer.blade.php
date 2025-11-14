@@ -93,13 +93,15 @@ $servicesList = \App\Models\Service::orderBy('id')->get();
                         <i class="fas fa-envelope"></i>
                     </span>
                     <span class="flex flex-col text-cyan-700">
-                        <a href="mailto:adrassociates@yahoo.in"
-                            class="text-cyan-700 hover:underline break-all">
-                            adrassociates@yahoo.in
-                        </a>
                         <a href="mailto:fcadst@gmail.com"
                             class="text-cyan-700 hover:underline break-all">
                             fcadst@gmail.com
+
+                        </a>
+                        <a href="mailto:adrassociates@yahoo.in"
+                            class="text-cyan-700 hover:underline break-all">
+                            adrassociates@yahoo.in
+
                         </a>
                     </span>
                 </li>
